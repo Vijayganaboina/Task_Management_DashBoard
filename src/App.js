@@ -1,24 +1,39 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import TaskFormWithPanel from "./components/TaskFormWithPanel";
+import TaskList from "./components/TaskList";
+import TaskFilters from "./components/TaskFilters";
+import SearchBar from "./components/SearchBar";
+import { Container, Typography, Box } from "@mui/material";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Container className="container">
+      <Typography
+        variant="h3"
+        align="center"
+        gutterBottom
+        sx={{ fontWeight: "400", marginTop: "2rem" }}
+      >
+        Task Management Dashboard
+      </Typography>
+      <Box
+        sx={{
+          display: "flex",
+          alignItems: "center",
+          gap: 1,
+          marginBottom: 3,
+        }}
+      >
+        <Box sx={{ flex: 1 }}>
+          <SearchBar />
+        </Box>
+        <Box sx={{ marginLeft: 0 }}>
+          <TaskFormWithPanel />
+        </Box>
+      </Box>
+      <TaskFilters />
+      <TaskList />
+    </Container>
   );
 }
 
