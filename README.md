@@ -26,7 +26,7 @@ Before running the application, make sure you have the following installed:
 First, clone the repository to your local machine:
 
 ```bash
-git clone https://github.com/your-username/task-management-dashboard.git
+git clone https://github.com/Vijayganaboina/Task_Management_DashBoard.git
 
 ### 2. Navigate to the Project Folder
 Change your directory to the project folder:
