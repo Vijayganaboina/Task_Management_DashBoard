@@ -39,7 +39,7 @@ const TaskList = () => {
         borderRadius: "8px",
         padding: 2,
         width: "100%",
-        maxWidth: "500px",
+        // maxWidth: "500px",
         margin: "0 auto",
       }}
     >
