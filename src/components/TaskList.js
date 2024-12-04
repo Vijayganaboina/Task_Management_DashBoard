@@ -15,7 +15,7 @@ import DeleteIcon from "@mui/icons-material/Delete";
 const TaskList = () => {
   const tasks = useSelector((state) => state.tasks.tasks);
   const filter = useSelector((state) => state.tasks.filter);
-  const searchTerm = useSelector((state) => state.tasks.searchTerm); // Get searchTerm from state
+  const searchTerm = useSelector((state) => state.tasks.searchTerm);
   const dispatch = useDispatch();
 
   const filteredTasks = tasks
@@ -28,7 +28,7 @@ const TaskList = () => {
     })
     .filter((task) =>
       task.title.toLowerCase().includes(searchTerm.toLowerCase())
-    ); 
+    );
 
   return (
     <Box
@@ -39,16 +39,17 @@ const TaskList = () => {
         borderRadius: "8px",
         padding: 2,
         width: "100%",
+        maxWidth: "500px",
         margin: "0 auto",
       }}
     >
       {filteredTasks.length > 0 ? (
-        <List>
+        <List sx={{ padding: "0" }}>
           {filteredTasks.map((task) => (
             <ListItem
               key={task.id}
               secondaryAction={
-                <>
+                <Box className="flex-row">
                   <Checkbox
                     edge="start"
                     checked={task.completed}
@@ -60,13 +61,14 @@ const TaskList = () => {
                   >
                     <DeleteIcon />
                   </IconButton>
-                </>
+                </Box>
               }
               sx={{
                 backgroundColor: "#71a3c1",
                 color: "white",
                 marginBottom: "0.5rem",
                 borderRadius: "0.5rem",
+                flexWrap: "wrap",
               }}
             >
               <ListItemText
@@ -86,7 +88,7 @@ const TaskList = () => {
             flexDirection: "column",
             alignItems: "center",
             justifyContent: "center",
-            height: "150px", 
+            height: "150px",
             textAlign: "center",
           }}
         >
